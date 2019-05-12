@@ -10,6 +10,7 @@ killpulse() {
     killall pulseaudio 2>/dev/null
     rm -rf ~/.config/pulse 2>/dev/null
     mkdir -p ~/.config/pulse 2>/dev/null
+    sleep .5
 }
 
 [[ -z "$(brew ls --versions pulseaudio)" ]] && brew install pulseaudio

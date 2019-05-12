@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 NAME=x11webgui
-PORT=32000
+PORT=8080
 WAIT=3
 
 if [ ! "$(docker ps -q -f name=$NAME)" ]; then
 
     [[ -z "$(brew ls --versions pulseaudio)" ]] && brew install pulseaudio
     killall pulseaudio 2>/dev/null
+    sleep 1
     pulseaudio --load=module-native-protocol-tcp --exit-idle-time=-1 --daemon 2>/dev/null
 
 
@@ -20,6 +21,9 @@ if [ ! "$(docker ps -q -f name=$NAME)" ]; then
         docker run                                    \
             -d                                        \
             --name $NAME                              \
+            -e AUTH=${AUTH:-false}                    \
+            -e USERNAME=user                          \
+            -e PASSWORD=secret                        \
             -e PULSE_SERVER=docker.for.mac.localhost  \
             -v ~/.config/pulse:/nobody/.config/pulse  \
             -p $PORT:32000                            \

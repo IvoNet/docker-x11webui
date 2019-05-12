@@ -1,0 +1,15 @@
+{
+  "guacamoleVersion": "*",
+  "name": "IvoNet - Guacamole Custom Login Extension",
+  "namespace": "custom-login-namespace",
+  "translations": [
+    "translations/en.json"
+  ],
+  "css": [
+    "css/login-override.css"
+  ],
+  "resources": {
+    "images/logo.png": "image/png"
+  }
+}
+

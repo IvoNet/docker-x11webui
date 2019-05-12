@@ -1,0 +1,20 @@
+.login-ui .login-dialog .logo {
+    background-image: url('app/ext/custom-login-namespace/images/logo.png');
+    width: 9em;
+    -webkit-background-size: 9em auto;
+}
+
+div.login-ui {
+    background: #000000;
+    background-color: #000000;
+}
+
+.login-ui .login-dialog {
+    background-color: #00ff00;
+}
+
+.login-ui .login-dialog .buttons input[type="submit"] {
+    width: 100%;
+    margin: 0;
+    background: darkblue;
+}
