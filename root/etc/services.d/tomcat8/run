@@ -24,14 +24,14 @@ cd /var/lib/tomcat8
 #    --illegal-access=permit \
 #    --add-opens java.base/java.lang=ALL-UNNAMED \
 #    --add-opens java.base/java.io=ALL-UNNAMED \
-#    --add-opens java.base/sun.rmi=ALL-UNNAMED \
+#    --add-opens java.rmi/sun.rmi.transport=ALL-UNNAMED \
 
 
 exec /usr/local/bin/gosu tomcat8 /usr/bin/java \
     --illegal-access=permit \
     --add-opens java.base/java.lang=ALL-UNNAMED \
     --add-opens java.base/java.io=ALL-UNNAMED \
-    --add-opens java.base/sun.rmi=ALL-UNNAMED \
+    --add-opens java.rmi/sun.rmi.transport=ALL-UNNAMED \
     -Djava.util.logging.config.file=/var/lib/tomcat8/conf/logging.properties \
     -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager \
     -Djava.awt.headless=true -Xmx128m -XX:+UseParallelGC \
