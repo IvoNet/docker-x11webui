@@ -1,4 +1,15 @@
 #!/usr/bin/with-contenv bash
+##############################################################################
+# XVNC service
+##############################################################################
+# Starts the vnc server as a service with all the parameters as desired.
+# The HEIGHT, WIDTH, VNC_DPI and VNC_DEPTH can be adjusted by providing them
+# as environment entries during the startup command.
+# e.g. -e HEIGHT=640 -e WIDTH=480 -e VNC_DEPTH=16
+# The port it listens to has been fixed as this image is designed to only
+# have one connection at the time and is therefore only used internally.
+##############################################################################
+
 exec 2>&1
 WD=${WIDTH:-1920}
 HT=${HEIGHT:-1080}

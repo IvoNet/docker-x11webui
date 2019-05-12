@@ -1,6 +1,11 @@
 #!/usr/bin/with-contenv bash
+##############################################################################
+# Guacamole Connection setup
+##############################################################################
+# This section configures the application to startup and gives it the name
+# provided by the startup or build command.
+##############################################################################
 
-echo "Creating Guacamole connection..."
 
 # Connection name
 if [ -z $APPNAME ]; then

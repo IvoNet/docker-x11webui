@@ -1,4 +1,11 @@
 #!/usr/bin/with-contenv bash
+##############################################################################
+# The nobody user
+##############################################################################
+# For some advanced settings you can overrule the USER_ID and GROUP_ID of
+# the nobody user.
+# these can be provided as environment arguments in the startup command.
+##############################################################################
 
 USERID=${USER_ID:-99}
 GROUPID=${GROUP_ID:-100}

@@ -10,7 +10,7 @@ versioning=false
 
 #OPTIONS="$OPTIONS --no-cache"
 #OPTIONS="$OPTIONS --force-rm"
-OPTIONS="$OPTIONS --build-arg APP=x11webgui --build-arg --build-arg USERNAME=ivonet"
+OPTIONS="$OPTIONS --build-arg VERSION=18.04"
 
 cd ivonet-guacamole-docker-auto-login
 mvn clean package clean

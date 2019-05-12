@@ -1,6 +1,14 @@
 #!/usr/bin/with-contenv bash
+##############################################################################
+# Guacamole Authentication or Auto-login configuration section
+##############################################################################
+# Decide during first boot if you want authentication enabled or not.
+# very easy to setup. Just add the following to your startup command.
+# -e AUTH=true -e USERNAME=username -e PASSWORD=secret
+##############################################################################
 
 echo "Setting authentication..."
+
 
 authentication=${AUTH:-false}
 autologin="ivonet-guacamole-docker-auto-login.jar"

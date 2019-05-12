@@ -1,4 +1,11 @@
 #!/usr/bin/with-contenv bash
+##############################################################################
+# Guacamole Server service
+##############################################################################
+# Starts the guacd service with the desired loglevel.
+# The loglevel can be overruled from the commandline startup command by
+# providing e.g. "-e GUACD_LOG_LEVEL=debug" in the command.
+##############################################################################
 
-exec /usr/sbin/guacd -b 0.0.0.0 -L ${GUACD_LOG_LEVEL:-info} -f
+exec /usr/sbin/guacd -b 0.0.0.0 -L ${GUACD_LOG_LEVEL:-fatal} -f
 sleep 1

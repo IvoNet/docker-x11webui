@@ -1,4 +1,11 @@
 #!/usr/bin/with-contenv sh
+##############################################################################
+# Openbox service
+##############################################################################
+# Starts openbox as a service with the correct parameters
+# The DISPLAY parameter can be overruled from the commandline startup command
+# but that should never be necessary.
+##############################################################################
 
 exec 2>&1
 DISP=${DISPLAY:-:1}

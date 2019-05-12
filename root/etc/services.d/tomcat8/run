@@ -1,4 +1,10 @@
 #!/usr/bin/with-contenv bash
+##############################################################################
+# Tomcat 8 service
+##############################################################################
+# Starts Tomcat 8 as a service. Tomcat 8 runs the Apache Guacamole Client
+# Which enables the web gui.
+##############################################################################
 
 exec 2>&1
 chown -R tomcat8:tomcat8 /var/lib/tomcat8/
@@ -8,7 +14,22 @@ mkdir -p /tmp/tomcat8-tmp 2>/dev/null
 
 cd /var/lib/tomcat8
 
-exec /usr/local/bin/gosu tomcat8 /usr/bin/java --illegal-access=permit \
+
+#FIX for these warnings:
+#      WARNING: An illegal reflective access operation has occurred
+#      WARNING: Illegal reflective access by [...]
+#      WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+#      WARNING: All illegal access operations will be denied in a future release
+#- Added these lines to the startup command of Tomcat
+#    --illegal-access=permit \
+#    --add-opens java.base/java.lang=ALL-UNNAMED \
+#    --add-opens java.base/java.io=ALL-UNNAMED \
+
+
+exec /usr/local/bin/gosu tomcat8 /usr/bin/java \
+    --illegal-access=permit \
+    --add-opens java.base/java.lang=ALL-UNNAMED \
+    --add-opens java.base/java.io=ALL-UNNAMED \
     -Djava.util.logging.config.file=/var/lib/tomcat8/conf/logging.properties \
     -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager \
     -Djava.awt.headless=true -Xmx128m -XX:+UseParallelGC \
