@@ -8,13 +8,19 @@ deploy="false"
 versioning=false
 #versioning=true
 
-#OPTIONS="$OPTIONS --no-cache"
-#OPTIONS="$OPTIONS --force-rm"
-OPTIONS="$OPTIONS --build-arg VERSION=18.04"
+echo "Build custom login extension..."
+cd ivonet-guacamole-custom-login
+mvn clean package clean
+cd ..
 
+echo "Build auto login extension..."
 cd ivonet-guacamole-docker-auto-login
 mvn clean package clean
 cd ..
+
+#OPTIONS="$OPTIONS --no-cache"
+#OPTIONS="$OPTIONS --force-rm"
+OPTIONS="$OPTIONS --build-arg VERSION=18.04"
 
 docker build ${OPTIONS} -t $docker_name/${image}:latest .
 if [ "$?" -eq 0 ] && [ ${deploy} == "true" ]; then
