@@ -168,6 +168,8 @@ e.g. COPY ./root/setup/scripts/files/guacamole-ext/ivonet-guacamole-custom-login
 The auto login extension is provided by default to the base image.
 You can activate it during first startup of a container by doing nothing of explicitly adding
 `-e AUTH=true` to the startup command.
+Don't forget to also include the `-e USERNAME=ivo -e PASSWORD=secret` parameters to the command 
+in this case
 
 Subsequent starts and stops of the same container will always have this feature as chosen at first run.  
 
