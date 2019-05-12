@@ -7,15 +7,13 @@
 # -e AUTH=true -e USERNAME=username -e PASSWORD=secret
 ##############################################################################
 
-echo "Setting authentication..."
-
-
 authentication=${AUTH:-false}
-autologin="ivonet-guacamole-docker-auto-login.jar"
 guacamole_home="/etc/guacamole"
-extension="${guacamole_home}/extensions/"
-disabled="${guacamole_home}/disabled/"
-user_mapping="user-mapping.xml"
+extension="${guacamole_home}/extensions"
+autologin="${extension}/ivonet-guacamole-docker-auto-login.jar"
+customlogin="${extension}/ivonet-guacamole-custom-login.jar"
+user_mapping="${guacamole_home}/user-mapping.xml"
+properties="${guacamole_home}/guacamole.properties"
 
 if [ -z ${USERNAME} ]; then
     export USERNAME=admin
@@ -23,24 +21,21 @@ if [ -z ${USERNAME} ]; then
 fi
 
 if [ "${authentication}" = true ]; then
-    # Use the user_mapping.xml file
+    rm -fv "${autologin}"
 
-    rm -f "${extension}${autologin}"                     2>/dev/null
-    mv "${disabled}${user_mapping}" "${guacamole_home}"  2>/dev/null
-
-    sed -i "s~USERNAME~$USERNAME~g" "${guacamole_home}/${user_mapping}"
+    sed -i "s~USERNAME~$USERNAME~g" "${user_mapping}"
 
     if [ -z ${PASSWORD} ]; then
         export PASSWORD=secret
         echo "PASSWORD not set defaulting to: ${PASSWORD}"
     fi
-    sed -i "s~PASSWORD~${PASSWORD}~g" "${guacamole_home}/${user_mapping}"
+    sed -i "s~PASSWORD~${PASSWORD}~g" "${user_mapping}"
 
 else
-    # Use the IvoNet autologin extension
-    rm -f "${guacamole_home}${user_mapping}"  2>/dev/null
-    
-    sed -i "s~USERNAME~${USERNAME}~g" /etc/guacamole/guacamole.properties
+    rm -fv "${user_mapping}"
+    rm -fv "${customlogin}"
+
+    sed -i "s~USERNAME~${USERNAME}~g" "${properties}"
 fi
 
 
