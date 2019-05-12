@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv sh
+
+exec 2>&1
+DISP=${DISPLAY:-:1}
+exec env DISPLAY=${DISP} HOME=/nobody /usr/local/bin/gosu nobody /usr/bin/openbox-session
+sleep 1

@@ -1,16 +1,13 @@
-FROM ivonet/web-gui-base:latest
+ARG VERSION=18.04
+FROM ivonet/ubuntu:${VERSION}
+
 LABEL maintainer="Ivo Woltring - @ivonet"
 
-ARG APP=x11webgui
-ARG USERNAME=user
-ARG PASSWORD=secret
-ARG ADMIN_NAME=admin
-ARG ADMIN_PASSWORD=admin
-
-ENV APPNAME=$APP                                 \
-    GUACAMOLE_ADMIN_USERNAME=$ADMIN_NAME         \
-    GUACAMOLE_ADMIN_PASSWORD=$ADMIN_PASSWORD     \
-    GUACAMOLE_USER_NAME=$USERNAME                \
-    GUACAMOLE_USER_PASSWORD=$PASSWORD
+ENV DISPLAY=:1
 
 COPY root/ /
+RUN chmod +x /setup/install.sh && /setup/install.sh && rm -rf /setup
+
+
+EXPOSE 32000
+

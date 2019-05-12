@@ -10,7 +10,11 @@ versioning=false
 
 #OPTIONS="$OPTIONS --no-cache"
 #OPTIONS="$OPTIONS --force-rm"
-OPTIONS="$OPTIONS --build-arg APP=x11webgui --build-arg ADMIN_NAME=x11webguiadmin --build-arg ADMIN_PASSWORD=secret --build-arg USERNAME=ivonet --build-arg PASSWORD=secret"
+OPTIONS="$OPTIONS --build-arg APP=x11webgui --build-arg --build-arg USERNAME=ivonet"
+
+cd ivonet-guacamole-docker-auto-login
+mvn clean package clean
+cd ..
 
 docker build ${OPTIONS} -t $docker_name/${image}:latest .
 if [ "$?" -eq 0 ] && [ ${deploy} == "true" ]; then

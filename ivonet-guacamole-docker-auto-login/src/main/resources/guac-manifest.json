@@ -1,0 +1,8 @@
+{
+  "guacamoleVersion": "1.0.0",
+  "name": "IvoNet - Docker Auto Login Extension",
+  "namespace": "docker-authentication-provider",
+  "authProviders": [
+    "nl.ivonet.provider.DockerAuthenticationProvider"
+  ]
+}
