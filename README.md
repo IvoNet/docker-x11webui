@@ -1,6 +1,6 @@
 # ivonet/x11webui docker base image
 
-A docker base image for running X11 desktop (graphical) applications as a website.
+A docker **base** image for running X11 desktop (graphical) applications as a website.
 
 # Usage
 
