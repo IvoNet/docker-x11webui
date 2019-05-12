@@ -141,7 +141,37 @@ pulseaudio --kill 2>/dev/null
 killall pulseaudio 2>/dev/null
 ```
 
-## Sample commands
+# Custom Login - extension
+
+If you plan to use the login feature of Guacamole in your own project you might want to copy the 
+`ivonet-guacamole-custom-login` project from this project to your own project and adjust it to your
+needs.
+
+## Custom Login - Build
+
+```bash
+mvn clean package
+```
+
+Note that you need to have `java` and `maven` installed on your system.
+
+## Custom Login - install
+
+When you have build the custom login project you can copy it to your docker image during build
+in your Dockerfile
+
+e.g. COPY ./root/setup/scripts/files/guacamole-ext/ivonet-guacamole-custom-login.jar /etc/guacamole/extensions/ivonet-guacamole-custom-login.jar
+
+
+# Auto login - extension
+
+The auto login extension is provided by default to the base image.
+You can activate it during first startup of a container by doing nothing of explicitly adding
+`-e AUTH=true` to the startup command.
+
+Subsequent starts and stops of the same container will always have this feature as chosen at first run.  
+
+# Sample run commands
 
 The following commands are only here to give you an idea on how it all might work but all of these
 will only show you the eyes as you should use this image as a base not as the main thing
