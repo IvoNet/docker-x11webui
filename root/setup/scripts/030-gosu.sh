@@ -9,3 +9,4 @@ gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88
 gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu { command -v gpgconf > /dev/null && gpgconf --kill all || : \;}
 rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc
 chmod +x /usr/local/bin/gosu
+
