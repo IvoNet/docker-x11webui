@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-NAME=x11webgui
+NAME=x11webui
 PORT=8080
 WAIT=3
 
@@ -27,7 +27,7 @@ if [ ! "$(docker ps -q -f name=$NAME)" ]; then
             -e PULSE_SERVER=docker.for.mac.localhost  \
             -v ~/.config/pulse:/nobody/.config/pulse  \
             -p $PORT:32000                            \
-            ivonet/x11webgui
+            ivonet/$NAME
 
         sleep $WAIT
         open http://localhost:$PORT

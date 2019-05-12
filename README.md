@@ -1,4 +1,4 @@
-# x11webgui
+# ivonet/x11webui docker base image
 
 A docker base image for running X11 desktop (graphical) applications as a website.
 
@@ -12,7 +12,7 @@ Using this image as a standalone image would serve no purpose but gives you some
 You can try it out:
 
 ```bash
-docker run -d --name eyes -p 8080:32000 ivonet/x11webgui
+docker run -d --name eyes -p 8080:32000 ivonet/x11webui
 ```
 
 and goto [http://localhost:8080](http://localhost:8080) to test it out.
@@ -57,7 +57,7 @@ If you want to know more about this read this [s6-overlay](https://github.com/ju
 * Create your own `Dockerfile`
 
 ```dockerfile
-FROM ivonet/x11webgui:latest
+FROM ivonet/x11webui:latest
 
 COPY root/ /
 # do your stuff here to add and configure your desktop application
@@ -182,7 +182,7 @@ Start in daemon mode with minimal options:
 docker run -d                         \
   --name gui                          \
   -p 32000:32000                      \
-  ivonet/web-gui-base
+  ivonet/x11webui
 ```
 
 Start in interactive mode with lots of options:
@@ -199,7 +199,7 @@ docker run                            \
   -e USERNAME=admin                   \
   -e PASSWORD=secret                  \
   -e VNC_DEPTH=24                     \
-  ivonet/web-gui-base
+  ivonet/x11webui
 ```
 
 # Release Notes

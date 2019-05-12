@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 docker_name=ivonet
-image=x11webgui
+image=x11webui
 version=0.1
 
 deploy="false"

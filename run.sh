@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-NAME=x11webgui
+NAME=x11webui
 PORT=8080
 if [ ! -z $1 ]; then
    EP="--entrypoint bash"
@@ -28,6 +28,6 @@ docker run                                   \
     -v ~/.config/pulse:/nobody/.config/pulse \
     -p ${PORT}:32000                         \
     $EP                                      \
-    ivonet/x11webgui
+    ivonet/$NAME
 
 killpulse
