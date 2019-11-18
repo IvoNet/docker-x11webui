@@ -21,7 +21,7 @@ if [ -z ${USERNAME} ]; then
 fi
 
 if [ "${authentication}" = true ]; then
-    rm -fv "${autologin}"
+    rm -fv "${autologin}" 2>/dev/null
 
     sed -i "s~USERNAME~$USERNAME~g" "${user_mapping}"
 
@@ -32,8 +32,8 @@ if [ "${authentication}" = true ]; then
     sed -i "s~PASSWORD~${PASSWORD}~g" "${user_mapping}"
 
 else
-    rm -fv "${user_mapping}"
-    rm -fv "${customlogin}"
+    rm -fv "${user_mapping}"  2>/dev/null
+    rm -fv "${customlogin}"   2>/dev/null
 
     sed -i "s~USERNAME~${USERNAME}~g" "${properties}"
 fi

@@ -29,5 +29,6 @@ docker run                                   \
     -p ${PORT}:32000                         \
     $EP                                      \
     ivonet/$NAME
+#    junk/x11webui
 
 killpulse

@@ -4,4 +4,3 @@ $agi unzip \
      dirmngr \
      gpg \
      gnupg
-
