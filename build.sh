@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 docker_name=ivonet
 image=x11webui
-version=0.1
+version=1.0
 
-deploy="false"
-#deploy="true"
-versioning=false
-#versioning=true
+#deploy="false"
+deploy="true"
+#versioning=false
+versioning=true
 
 echo "Build custom login extension..."
 cd ivonet-guacamole-custom-login
