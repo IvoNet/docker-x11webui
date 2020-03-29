@@ -21,7 +21,6 @@ docker run                                   \
     -it                                      \
     --rm                                     \
     --name $NAME                             \
-    -e AUTH=${AUTH:-false}                   \
     -e USERNAME=user                         \
     -e PASSWORD=secret                       \
     -e PULSE_SERVER=docker.for.mac.localhost \
