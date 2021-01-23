@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # Programs that will run after Openbox has started
 
 xsetroot -solid black -cursor_name left_ptr
