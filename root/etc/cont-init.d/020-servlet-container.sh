@@ -6,7 +6,7 @@
 # The SERVER_PORT can be overruled to set it to your desire.
 # this can be done as an environment (e.g. -e SERVER_PORT=8888) parameter in
 # the startup command.
-# Note that this would also overrule the EXPORTed port of the Dockerfile and
+# Note that this would also overrule the EXPORTed port of the Dockerfile.v1.shellinabox and
 # should therefore also be reflect in the port mapping
 # e.g. -p LOCAL_PORT:SERVER_PORT
 ##############################################################################
