@@ -7,5 +7,6 @@ sed -i 's/^#\s*\(deb.*multiverse\)$/\1/g' /etc/apt/sources.list
 
 # Font fix
 add-apt-repository ppa:no1wantdthisname/openjdk-fontfix -y
+add-apt-repository ppa:guacamole/stable -y
 
 apt-get update

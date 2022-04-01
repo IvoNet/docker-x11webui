@@ -16,3 +16,4 @@ mkdir -p /usr/share/tomcat8/server/classes                  2>/dev/null
 chown -R tomcat8:tomcat8 /var/lib/tomcat8                   2>/dev/null
 chown -R tomcat8:tomcat8 /usr/share/tomcat8                 2>/dev/null
 
+mkdir -p /var/lib/tomcat8/logs

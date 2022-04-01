@@ -12,7 +12,7 @@ before building the docker images
 or just use:
 
 ```bash
-build.sh
+pre-make.sh
 ```
 
 to build the project.
