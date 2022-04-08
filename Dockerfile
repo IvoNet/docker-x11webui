@@ -1,4 +1,4 @@
-ARG VERSION=20.04
+ARG VERSION=18.04
 FROM ivonet/ubuntu:${VERSION}
 
 LABEL maintainer="Ivo Woltring - @ivonet"
