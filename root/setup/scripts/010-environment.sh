@@ -12,7 +12,7 @@ export LD_LIBRARY_PATH=${GUACD_DIR}/lib
 export DISPLAY=:1
 
 #create a shortcut for this command as it will be used a lot...
-export agi='apt-get install -y -q --no-install-recommends'
+export agi='apt-get install -y -qq --no-install-recommends'
 
 # Fix locale
 locale-gen en_US

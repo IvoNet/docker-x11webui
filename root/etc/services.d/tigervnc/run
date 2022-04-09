@@ -1,5 +1,5 @@
-#!/command/execlineb -P
+#!/command/s6-env bash
 ##############################################################################
-# Guacamole Server service
+# Tiger VNC
 ##############################################################################
-/usr/local/sbin/guacd -b 0.0.0.0 -L error -f
+/usr/sbin/gosu nobody vncserver -SecurityTypes None --I-KNOW-THIS-IS-INSECURE -localhost no -fg ${DISPLAY:-:1}

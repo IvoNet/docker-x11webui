@@ -13,6 +13,7 @@ You can try it out:
 
 ```bash
 docker run -d --name eyes -p 8080:32000 ivonet/x11webui
+docker run -it --name ui -e AUTH=false -e USERNAME=user -e PASSWORD=secret -e PULSE_SERVER=docker.for.mac.localhost -v ~/.config/pulse:/nobody/.config/pulse -p 8080:32000 ivonet/x11webui
 ```
 
 and goto [http://localhost:8080](http://localhost:8080) to test it out.

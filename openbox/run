@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv sh
+#!/command/s6-env bash
 ##############################################################################
 # Openbox service
 ##############################################################################
@@ -7,7 +7,6 @@
 # but that should never be necessary.
 ##############################################################################
 
-exec 2>&1
 DISP=${DISPLAY:-:1}
-exec env DISPLAY=${DISP} HOME=/nobody /usr/local/bin/gosu nobody /usr/bin/openbox-session
+DISPLAY=${DISP} HOME=/nobody /usr/sbin/gosu nobody /usr/bin/openbox-session
 sleep 1

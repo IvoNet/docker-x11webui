@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/command/with-contenv bash
 ##############################################################################
 # Tomcat 8 extra setup
 ##############################################################################
@@ -13,12 +13,13 @@
 
 # Some small fixes for the tomcat8 install
 # Some needed directories
-mkdir -p /var/cache/tomcat8 2>/dev/null
-mkdir -p /tmp/tomcat8-tomcat8-tmp 2>/dev/null
+mkdir -p /var/cache/tomcat9 2>/dev/null
+mkdir -p /tmp/tomcat9-tmp 2>/dev/null
 
 # Sets the serverport
 PORT=${SERVER_PORT:-32000}
-sed -i "s~<Connector port=\"8080\" protocol=\"HTTP/1.1~<Connector port=\"${PORT}\" protocol=\"HTTP/1.1~g" /var/lib/tomcat8/conf/server.xml
+sed -i "s~<Connector port=\"8080\"~<Connector port=\"${PORT}\"~g" /var/lib/tomcat9/conf/server.xml
+sed -i "s~port=\"8080\" protocol=\"HTTP/1.1~port=\"${PORT}\" protocol=\"HTTP/1.1~g" /var/lib/tomcat9/conf/server.xml
 
 # Remove almost all logging from tomcat
-sed -i "s~FINE~SEVERE~g" /var/lib/tomcat8/conf/logging.properties
+sed -i "s~FINE~SEVERE~g" /var/lib/tomcat9/conf/logging.properties

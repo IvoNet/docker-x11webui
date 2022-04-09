@@ -1,0 +1,1 @@
+HOME=/nobody /usr/sbin/gosu nobody /usr/bin/openbox-session

@@ -3,4 +3,5 @@
 $agi unzip \
      dirmngr \
      gpg \
-     gnupg
+     gnupg \
+     gosu
