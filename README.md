@@ -2,6 +2,9 @@
 
 A docker **base** image for running X11 desktop (graphical) applications as a website.
 
+It can run desktop applications internally and expose them it through clever usage of x11 / vnc and apache guacamole
+as a website in browsers.
+
 # Usage
 
 See `run.sh` for an examples on how to run the application.
