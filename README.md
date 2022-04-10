@@ -207,6 +207,16 @@ docker run                            \
 
 # Release Notes
 
+v2.0-20.04
+- now on ubuntu 20.04
+- multiplatform build for arm64 (aarch64) and amd64 (x86)
+- s6-overlay upgraded to v3.1.0.1
+- Guacamole upgraded to 1.0.4
+- Guacamole server native build
+- moved to tigervnc
+- Many other upgrades and fixes
+- KNOWN ISSUE: WIDTH and HEIGHT do not yet seem to work
+
 v1.0
 - Based on ivonet/web-gui-base:1.4 but moved to its own project as the direction of development changed
     - removed mysql as auth manager
