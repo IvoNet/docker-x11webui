@@ -2,4 +2,17 @@
 ##############################################################################
 # Tiger VNC
 ##############################################################################
-/usr/sbin/gosu nobody vncserver -SecurityTypes None --I-KNOW-THIS-IS-INSECURE -localhost no -fg ${DISPLAY:-:1}
+
+WD=${WIDTH:-1920}
+HT=${HEIGHT:-1080}
+
+/usr/sbin/gosu nobody vncserver \
+  ${DISPLAY:-:1}                \
+  -SecurityTypes None           \
+  --I-KNOW-THIS-IS-INSECURE     \
+  -localhost no                 \
+  -geometry ${WD}x${HT}         \
+  -fg                           \
+  -depth ${VNC_DPI:-32}         \
+  -rfbport 5901                 \
+  -fp /usr/share/fonts/X11/misc/,/usr/share/fonts/X11/75dpi/,/usr/share/fonts/X11/100dpi/
