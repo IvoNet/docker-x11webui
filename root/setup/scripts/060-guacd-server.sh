@@ -27,7 +27,8 @@ wget https://downloads.apache.org/guacamole/1.4.0/source/guacamole-server-1.4.0.
 tar -xvf guacamole-server-1.4.0.tar.gz
 cd guacamole-server-1.4.0
 
-./configure --with-init-dir=/etc/init.d --enable-allow-freerdp-snapshots
+CFLAGS=-Wno-error ./configure --with-init-dir=/etc/init.d --enable-allow-freerdp-snapshots
+
 make
 make install
 

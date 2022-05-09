@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "Cleaning up stuff..."
 
-apt-get purge -y --auto-remove unzip gpg
+apt-get purge -y --auto-remove unzip gpg build-essential
 apt-get clean
 rm -rf /var/lib/apt/lists/*
 rm -f /etc/apt/sources.list.d/temp.list 2>/dev/null
