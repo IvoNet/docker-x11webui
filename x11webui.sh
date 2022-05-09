@@ -24,6 +24,8 @@ if [ ! "$(docker ps -q -f name=$NAME)" ]; then
             -e AUTH=${AUTH:-false}                    \
             -e USERNAME=user                          \
             -e PASSWORD=secret                        \
+            -e USER_ID=$(id -u $USER)                 \
+            -e GROUP_ID=$(id -g $USER)                \
             -e PULSE_SERVER=docker.for.mac.localhost  \
             -v ~/.config/pulse:/nobody/.config/pulse  \
             -p $PORT:32000                            \
